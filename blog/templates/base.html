@@ -1,20 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <title>Mi Blog {% block titulo %}{% endblock titulo %}</title>
+    <title>{% block titulo %}Mi Blog {% endblock titulo %}</title>
 </head>
 <body class="contenedor">
     {% block contenido %}
-
-
+    <main><h1>Blog de recetas 2023</h1></main>
+    <contenedor> <p> las mejores recetas<br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, tenetur. </p></contenedor>
     {% endblock contenido %}
+
+
+</body>
+<footer>    <nav>
     <a href="{% url 'nosotros' %}">IR A NOSOTROS</a>
     <a href="{% url 'home' %}">VOLVER AL INICIO</a>
     <a href="{% url 'recetas:listar' %}">RECETAS</a>
+    {% if user.is_authenticated %}
+    <strong>Hola {{ user.username }}</strong>
+    <a href="{% url 'logout' %}">LOGOUT</a>
+{% else %}
+    <a href="{% url 'login' %}">LOGIN</a>
+    <a href="{% url 'registro' %}">REGISTRO</a>
+{% endif %}
 
-</body>
+    
+    </nav></footer>
 </html>

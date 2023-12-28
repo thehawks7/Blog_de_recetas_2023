@@ -1,6 +1,11 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block titulo %}Recetas{% endblock titulo %}
-{% block contenido %}
-    <h2>aca estan mis Recetas !</h2>
-{% endblock contenido %}
+<h2>aca estan mis recetas !</h2>
+<div class="submenu">
+    <a href="{% url 'recetas:listar'%}">TODAS</a>
+    {% for cat in categorias %}
+        <a href="?id={{cat.pk}}">{{cat.nombre}}</a>
+    {% endfor %}
+    <a href="?antiguedad_asc=A">Mas antiguas primero</a>
+    <a href="?antiguedad_desc=D">Mas recientes primero</a>
+    <a href="?orden_asc=1">A - Z</a>
+    <a href="?orden_desc=1">Z - A</a>
+</div>

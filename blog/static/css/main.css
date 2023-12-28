@@ -1,2 +1,24 @@
-.contenedor{
-    background-color: lightpink;}
+nav{width: 10%;
+    position:absolute;
+    top: 0%;
+    left:0%;
+    background-color: rgba(73, 17, 17, 0.479);
+padding: 10px;}
+h1{font-family:'Lucida Handwriting'; 
+    font-size: x-large; font-weight:100;
+    background-color: brown;
+    padding: 1%;
+    margin-left: 15%;
+    left: 100%;}
+h2{margin-left: 15%;}
+a{font-size: small; 
+    font-family: 'Courier New';
+    color: black;}
+
+
+    .rece{
+        text-align: center;
+    }
+    
+.contenedor{background-color: gray;}
+
