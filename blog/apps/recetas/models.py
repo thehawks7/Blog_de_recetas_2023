@@ -42,7 +42,7 @@ class Receta(models.Model):
     resumen = models.CharField(max_length=200, null=True)
     texto = models.TextField()
     #imagen requiere la libreria pillow
-    imagenes = models.ImageField(upload_to='recetas')
+    imagenes = models.ImageField(null=True, blank=True, upload_to='recetas', default='static/post_default.png')
     fecha = models.DateTimeField(auto_now_add=True)
     categorias = models.ForeignKey(Categoria, on_delete= models.SET_NULL, null=True) # models.CASCADE
     autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=Usuario.objects.get(is_superuser=True).pk)

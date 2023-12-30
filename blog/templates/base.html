@@ -3,31 +3,37 @@
 <html lang="es-ar">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <title>{% block titulo %}Mi Blog {% endblock titulo %}</title>
 </head>
-<body class="contenedor">
+</main>
+<body">
     {% block contenido %}
     <main><h1>Blog de recetas 2023</h1></main>
-    <contenedor> <p> las mejores recetas<br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, tenetur. </p></contenedor>
+    <contenedor> <p> las mejores recetas. </p></contenedor>
     {% endblock contenido %}
-
-
 </body>
-<footer>    <nav>
-    <a href="{% url 'nosotros' %}">IR A NOSOTROS</a>
-    <a href="{% url 'home' %}">VOLVER AL INICIO</a>
-    <a href="{% url 'recetas:listar' %}">RECETAS</a>
+</main>
+</nav class="contenedor2">     
+<a href="{% url 'nosotros' %}">IR A NOSOTROS</a>
+</nav>
+
+<footer>    
+    <nav class="contenedor3">
+    <a href="{% url 'home' %}">VOLVER AL INICIO</a> 
+    <a href="{% url 'recetas:listar' %}">RECETAS</a></br>
     {% if user.is_authenticated %}
     <strong>Hola {{ user.username }}</strong>
+    <a href="{% url 'addpost' %}">ADDPOST</a>    
     <a href="{% url 'logout' %}">LOGOUT</a>
-{% else %}
-    <a href="{% url 'login' %}">LOGIN</a>
+    {% else %}
+    <a href="{% url 'login' %}">LOGIN</a></br>
     <a href="{% url 'registro' %}">REGISTRO</a>
-{% endif %}
+    {% endif %}
+    </nav>
 
-    
-    </nav></footer>
+</footer>
 </html>

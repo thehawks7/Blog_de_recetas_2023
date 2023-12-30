@@ -47,7 +47,7 @@ def ListarRecetas(request):
 
 
     if id_categoria:
-        n = Receta.objects.filter(categoria_recetas = id_categoria)
+        n = Receta.objects.filter(categorias = id_categoria)
     else:
         n = Receta.objects.all() # SELECT * FROM NOTICIAS
     cat = Categoria.objects.all().order_by('nombre') #ordena por nombre
@@ -96,7 +96,7 @@ def AddPost(request):
     else:
         form = PostForm()
     
-    return render (request, 'recetas/addPost.html', {'form':form})
+    return render (request, 'recetas/addpost.html', {'form':form})
 
 
 

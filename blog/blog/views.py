@@ -10,5 +10,5 @@ def recetas(request):
     return render(request, recetas.html)
 def base(request):
     return base(request, base.html)
-def addPost(request):
-    return base(request, addPost.html)
+def addpost(request):
+    return base(request, addpost.html)

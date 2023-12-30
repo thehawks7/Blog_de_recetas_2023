@@ -6,7 +6,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 class Usuario(AbstractUser):
-    imagen = models.ImageField(upload_to='usuario', default='default-user.png')
+    imagen = models.ImageField(upload_to='usuarios', default='default-user.png')
     #imagen de perfil de usuario
     # USUARIOS QUE TENEMOS EN NUESTRO BLOG Y SUS PERMISOS
     USUARIO_COLABORADOR = 'Colaborador'

@@ -28,7 +28,7 @@ urlpatterns = [
     path('nosotros/', views.nosotros, name='nosotros'),
     path('recetas/', include('apps.recetas.urls')),
     path('usuarios/', include('apps.usuarios.urls')),
-    path('addPost', views.addPost, name='addPost')
+    path('addpost/', views.addpost, name='addpost'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
